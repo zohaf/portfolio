@@ -1,0 +1,52 @@
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  img {
+    height: 128px;
+    border-radius: 5rem;
+  }
+
+  p {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+      Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+      sans-serif;
+    font-size: 14px;
+    font-weight: 200;
+    line-height: 20px;
+    max-width: 400px;
+    margin: 0;
+  }
+}
+
+.title {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+  margin: 0;
+
+  h1 {
+    font-family: "IBM Plex Sans";
+    line-height: 44px;
+    font-size: 44px;
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.location {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.profileImage {
+  height: 128px;
+  width: 128px;
+}
