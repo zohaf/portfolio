@@ -1,95 +1,93 @@
 .container {
   padding: 0 2rem;
-}
-
-.main {
-  min-height: 100vh;
-  padding: 4rem 0;
-  flex: 1;
+  background-color: #d0ca2d;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.footer {
-  display: flex;
+.main {
+  min-height: 100vh;
+  padding: 4rem 0;
   flex: 1;
-  padding: 2rem 0;
-  border-top: 1px solid #eaeaea;
-  justify-content: center;
-  align-items: center;
 }
 
-.footer a {
+.header {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-grow: 1;
+  gap: 32px;
 }
 
-.title a {
-  color: #0070f3;
-  text-decoration: none;
+.header img {
+  height: 94px;
+  border-radius: 5rem;
 }
 
-.title a:hover,
-.title a:focus,
-.title a:active {
-  text-decoration: underline;
+.header p {
+  max-width: 248px;
+  font-family: Helvetica;
+  font-size: 14px;
+  margin: 0;
 }
 
 .title {
-  margin: 0;
+  max-width: 88px;
   line-height: 1.15;
-  font-size: 4rem;
+  font-size: 2rem;
+  font-family: Impact;
 }
 
-.title,
-.description {
-  text-align: center;
-}
-
-.description {
-  margin: 4rem 0;
-  line-height: 1.5;
-  font-size: 1.5rem;
-}
-
-.code {
-  background: #fafafa;
-  border-radius: 5px;
-  padding: 0.75rem;
-  font-size: 1.1rem;
-  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-    Bitstream Vera Sans Mono, Courier New, monospace;
-}
-
-.grid {
+.location {
+  font-size: 12px;
+  background-color: rgba(166, 166, 166, 0.513);
+  width: max-content;
+  border-radius: 25px;
+  padding: 0px 12px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  max-width: 800px;
+}
+
+.location p {
+  padding-left: 5px;
+  margin: 6px 0;
+}
+
+.social {
+  display: flex;
+  gap: 4;
+}
+
+.body {
+  margin-top: 64px;
+  display: flex;
+  flex-direction: column;
+}
+
+.work p {
+  max-width: 500px;
+  padding-left: 100px;
 }
 
 .card {
-  margin: 1rem;
-  padding: 1.5rem;
+  padding-top: 5px;
   text-align: left;
-  color: inherit;
-  text-decoration: none;
-  border: 1px solid #eaeaea;
-  border-radius: 10px;
+  font-size: 12px;
   transition: color 0.15s ease, border-color 0.15s ease;
   max-width: 300px;
+}
+
+.divider {
+  width: 500px;
+  height: 2px;
+  background-color: #fff;
 }
 
 .card:hover,
 .card:focus,
 .card:active {
-  color: #0070f3;
-  border-color: #0070f3;
+  color: rgb(65, 65, 65);
 }
 
 .card h2 {
