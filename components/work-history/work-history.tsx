@@ -5,7 +5,7 @@ export function WorkHistory() {
     <div className={styles.work}>
       <h2>Work</h2>
       <div className={styles.divider}></div>
-      <a href="https://nextjs.org/docs" className={styles.card}>
+      <a href="/Propps" className={styles.card}>
         <h3>propps</h3>
       </a>
       <div className={styles.divider} />
@@ -20,8 +20,8 @@ export function WorkHistory() {
       </a>
       <div className={styles.divider} />
       <p>
-        building responsive UI features in react app with typescript. Taking
-        responsibility for the design system and some of the feature designs.
+        Building test-driven UI library in a react app with typescript for a
+        greenfield project.
       </p>
     </div>
   );
