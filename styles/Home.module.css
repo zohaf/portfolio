@@ -2,7 +2,9 @@
   padding: 0 2rem;
   background-color: #f6a400;
 
-  font-family: "IBM Plex Sans";
+  font-family: "IBM Plex Sans", ui-sans-serif, system-ui, -apple-system,
+    "system-ui", "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   display: flex;
   flex-direction: column;
   justify-content: center;
