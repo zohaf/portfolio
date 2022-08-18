@@ -4,10 +4,15 @@
   justify-content: space-between;
   align-items: flex-end;
 
-  img {
+  .profileImage {
     height: 128px;
-    border-radius: 5rem;
+    width: 128px;
+    border-radius: 50%;
     border: 4px solid white;
+
+    img {
+      border-radius: 50%;
+    }
   }
 
   p {
@@ -45,9 +50,4 @@
   display: flex;
   align-items: center;
   gap: 8px;
-}
-
-.profileImage {
-  height: 128px;
-  width: 128px;
 }

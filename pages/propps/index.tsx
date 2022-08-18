@@ -3,7 +3,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import styles from "../../styles/Home.module.css";
 import FeatherIcon from "feather-icons-react";
-import { WorkHistory } from "../../components/work-history/work-history";
+import { WorkHistory } from "../../components/WorkHistory";
 
 const Propps: NextPage = () => (
   <div className={styles.container}>

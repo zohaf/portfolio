@@ -1,12 +1,13 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import { Header } from "../components/header/header";
+import { Header } from "../components/Header";
 import styles from "../styles/Home.module.css";
-import { SubHeader } from "../components/sub-header/sub-header";
-import { WorkHistory } from "../components/work-history/work-history";
+import { SubHeader } from "../components/SubHeader";
+import { WorkHistory } from "../components/WorkHistory";
+import { Container } from "../components/Container";
 
 const Home: NextPage = () => (
-  <div className={styles.container}>
+  <Container>
     <Head>
       <title>Zoha Fard</title>
       <meta name="description" content="portfolio" />
@@ -17,7 +18,14 @@ const Home: NextPage = () => (
       <br />
       <br />
       <br />
-      <Header />
+      <Header
+        image={{
+          src: "/profilePhoto.jpg",
+          alt: "profile photo",
+          width: 128,
+          height: 128,
+        }}
+      />
       <br />
       <br />
       {/* <SubHeader /> */}
@@ -41,7 +49,7 @@ const Home: NextPage = () => (
         </div>
       </div>
     </main>
-  </div>
+  </Container>
 );
 
 export default Home;

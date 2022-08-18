@@ -1,5 +1,5 @@
-import styles from "./sub-header.module.scss";
 import FeatherIcon from "feather-icons-react";
+import styles from "./sub-header.module.scss";
 
 export function SubHeader() {
   return (
