@@ -4,9 +4,10 @@ import Head from "next/head";
 import styles from "../../styles/Home.module.css";
 import FeatherIcon from "feather-icons-react";
 import { WorkHistory } from "../../components/WorkHistory";
+import { Container } from "../../components/Container";
 
 const Propps: NextPage = () => (
-  <div className={styles.container}>
+  <Container>
     <Head>
       <title>Zoha Fard</title>
       <meta name="description" content="portfolio" />
@@ -20,7 +21,7 @@ const Propps: NextPage = () => (
         <WorkHistory />
       </div>
     </main>
-  </div>
+  </Container>
 );
 
 export default Propps;

@@ -43,6 +43,12 @@
     font-weight: 700;
     margin: 0;
     padding: 0;
+
+    :hover,
+    :focus,
+    :active {
+      color: #f6a400;
+    }
   }
 }
 
