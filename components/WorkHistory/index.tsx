@@ -1,5 +1,6 @@
-import Link from "next/link";
 import { Card } from "../Card";
+import { EatfirstLogo } from "../Icons/EatfirstLogo";
+import { ProppsLogo } from "../Icons/ProppsLogo";
 import styles from "./work-history.module.scss";
 
 export function WorkHistory() {
@@ -10,6 +11,7 @@ export function WorkHistory() {
         <Card.Header
           title={{ type: "link", text: "Propps" }}
           detail="Remote, Australia | Sept 21 - Jul 22"
+          logo={<ProppsLogo />}
         />
         <Card.Body>
           <p>
@@ -27,6 +29,7 @@ export function WorkHistory() {
         <Card.Header
           title={{ type: "link", text: "Eatfirst" }}
           detail="Sydney, Australia | May 21 - Sept 21"
+          logo={<EatfirstLogo />}
         />
         <Card.Body>
           <p>

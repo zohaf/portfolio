@@ -2,6 +2,7 @@
   padding: 0;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   font-size: 12px;
 
   h3 {
@@ -11,6 +12,13 @@
   :hover {
     color: #f6a400;
   }
+}
+
+.title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
 }
 
 .divider {

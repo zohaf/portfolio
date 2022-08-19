@@ -2,7 +2,6 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import { Header } from "../components/Header";
 import styles from "../styles/Home.module.css";
-import { SubHeader } from "../components/SubHeader";
 import { WorkHistory } from "../components/WorkHistory";
 import { Container } from "../components/Container";
 

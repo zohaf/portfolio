@@ -1,5 +1,5 @@
 import Link from "next/link";
-import type { FC, ReactNode } from "react";
+import type { Component, FC, ReactNode } from "react";
 import { Children } from "react";
 import styles from "./Card.module.scss";
 
@@ -34,15 +34,19 @@ export const Card: FC<CardProps> & SubComponent = ({ children }) => {
 type HeaderProps = {
   title: { type: "link" | "text"; text: String };
   detail: String;
+  logo?: JSX.Element;
 };
 
-const Header: FC<HeaderProps> = ({ title, detail }) => (
+const Header: FC<HeaderProps> = ({ title, detail, logo }) => (
   <>
     <div className={styles.divider} />
     {title.type === "link" && (
       <Link href={`/${title.text.toLowerCase()}`}>
         <a className={styles.card}>
-          <h3>{title.text}</h3>
+          <div className={styles.title}>
+            {logo}
+            <h3>{title.text}</h3>
+          </div>
           <h3>{detail}</h3>
         </a>
       </Link>
