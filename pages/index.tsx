@@ -8,12 +8,6 @@ import { Education } from "../components/Education";
 
 const Home: NextPage = () => (
   <Container>
-    <Head>
-      <title>Zoha Fard</title>
-      <meta name="description" content="portfolio" />
-      <link rel="icon" href="/circle.svg" />
-    </Head>
-
     <Header
       image={{
         src: "/profilePhoto.jpg",
