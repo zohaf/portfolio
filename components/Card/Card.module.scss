@@ -1,3 +1,11 @@
+.root__link {
+  :hover {
+    > * {
+      color: #f6a400;
+    }
+  }
+}
+
 .card {
   padding: 0;
   display: flex;
@@ -7,10 +15,6 @@
 
   h3 {
     font-weight: 400;
-  }
-
-  :hover {
-    color: #f6a400;
   }
 }
 

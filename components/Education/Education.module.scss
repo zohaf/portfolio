@@ -1,0 +1,23 @@
+.section {
+  margin-top: 96px;
+
+  h2 {
+    font-size: 18px;
+  }
+
+  p {
+    font-weight: 200;
+    font-size: 14px;
+    line-height: 1.5;
+    max-width: 544px;
+    padding-left: 100px;
+  }
+
+  a {
+    text-decoration: underline;
+
+    :hover {
+      color: #f6a400;
+    }
+  }
+}

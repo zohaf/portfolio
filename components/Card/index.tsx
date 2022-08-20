@@ -1,6 +1,7 @@
 import Link from "next/link";
-import type { Component, FC, ReactNode } from "react";
+import type { FC, ReactNode } from "react";
 import { Children } from "react";
+import classnames from "classnames";
 import styles from "./Card.module.scss";
 
 type CardProps = { children: ReactNode };
@@ -35,11 +36,16 @@ type HeaderProps = {
   title: { type: "link" | "text"; text: String };
   detail: String;
   logo?: JSX.Element;
+  divider?: Boolean;
 };
 
-const Header: FC<HeaderProps> = ({ title, detail, logo }) => (
-  <>
-    <div className={styles.divider} />
+const Header: FC<HeaderProps> = ({ title, detail, logo, divider }) => (
+  <div
+    className={classnames({
+      [styles.root__link]: title.type === "link",
+    })}
+  >
+    {divider && <div className={styles.divider} />}
     {title.type === "link" && (
       <Link href={`/${title.text.toLowerCase()}`}>
         <a className={styles.card}>
@@ -57,8 +63,8 @@ const Header: FC<HeaderProps> = ({ title, detail, logo }) => (
         <h3>{detail}</h3>
       </div>
     )}
-    <div className={styles.divider} />
-  </>
+    {divider && <div className={styles.divider} />}
+  </div>
 );
 
 const Body: FC<{
