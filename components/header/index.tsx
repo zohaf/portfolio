@@ -7,7 +7,7 @@ type HeaderProps = {
   image?: ImageProps;
 };
 
-export const Header: FC<HeaderProps> = ({ image }) => {
+const Header: FC<HeaderProps> = ({ image }) => {
   return (
     <div className={styles.header}>
       <div className={styles.title}>
@@ -31,3 +31,5 @@ export const Header: FC<HeaderProps> = ({ image }) => {
     </div>
   );
 };
+
+export default Header;

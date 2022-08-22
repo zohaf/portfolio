@@ -1,5 +1,5 @@
 import type { NextPage } from "next";
-import { Header } from "../components/Header";
+import Header from "../components/Header";
 import { Work } from "../components/WorkHistory";
 import { Education } from "../components/Education";
 import { Container } from "../components/Container";
