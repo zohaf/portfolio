@@ -7,6 +7,14 @@ import { Container } from "../../components/Container";
 import { Card } from "../../components/Card";
 import { ProppsLogo } from "../../components/Icons";
 
+const imageSources = [
+  "listings",
+  "offers",
+  "inviteBuyer",
+  "actionOffer",
+  "agentcards",
+];
+
 const Propps: NextPage = () => (
   <Container>
     <Link href="/">
@@ -22,16 +30,14 @@ const Propps: NextPage = () => (
       <Card.Body>
         <br />
         <div className={styles.wrapper}>
-          <Image
-            className={styles.image}
-            src="/propps_listings.png"
+          {/* <Image
+            src={`/propps_${imageSources.map((image) => image)}.png`}
             alt="propps demo"
             width={566}
             height={376}
-          />
+          /> */}
           <br />
           <Image
-            className={styles.image}
             src="/propps_offers.png"
             alt="propps demo"
             width={566}
@@ -39,7 +45,6 @@ const Propps: NextPage = () => (
           />
           <br />
           <Image
-            className={styles.image}
             src="/propps_inviteBuyer.png"
             alt="propps demo"
             width={566}
@@ -47,7 +52,6 @@ const Propps: NextPage = () => (
           />
           <br />
           <Image
-            className={styles.image}
             src="/propps_actionOffer.png"
             alt="propps demo"
             width={566}
@@ -55,7 +59,6 @@ const Propps: NextPage = () => (
           />
           <br />
           <Image
-            className={styles.image}
             src="/propps_agentcards.png"
             alt="propps demo"
             width={566}
