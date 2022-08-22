@@ -1,9 +1,8 @@
 import type { NextPage } from "next";
 import { Header } from "../components/Header";
-import styles from "../styles/Home.module.css";
-import { Work } from "../components/Work";
-import { Container } from "../components/Container";
+import { Work } from "../components/WorkHistory";
 import { Education } from "../components/Education";
+import { Container } from "../components/Container";
 import { Contact } from "../components/Contact";
 
 const Home: NextPage = () => (
@@ -17,7 +16,7 @@ const Home: NextPage = () => (
       }}
     />
     <Contact />
-    <div className={styles.body}>
+    <div>
       <Work />
       <Education />
     </div>

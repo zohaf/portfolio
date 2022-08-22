@@ -9,6 +9,9 @@ body {
 
 html {
   background-color: #f6a400;
+  --primary-color: #f6a400;
+  --black-color: #000;
+  --grey-color: rgba(255, 255, 255, 0.5);
 }
 
 body {
