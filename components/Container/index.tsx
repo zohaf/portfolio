@@ -1,6 +1,6 @@
 import type { FC } from "react";
 import { ReactNode } from "react";
-import styles from "./container.module.scss";
+import styles from "./Container.module.scss";
 
 type ContainerPropps = {
   children: ReactNode;
