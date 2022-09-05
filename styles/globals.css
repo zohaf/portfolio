@@ -16,6 +16,8 @@ html {
   --primary-color: #f6a400;
   --black-color: #000;
   --grey-color: rgba(255, 255, 255, 0.5);
+  --screen-xs: 344px;
+  --screen-sm: 575px;
 }
 
 body {

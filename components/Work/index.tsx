@@ -15,7 +15,7 @@ export function Work() {
           divider
         />
         <Card.Body>
-          <p>
+          <p className={styles.paragraph}>
             building responsive UI features in react app with typescript. Taking
             responsibility for the design system and some of the feature
             designs.
