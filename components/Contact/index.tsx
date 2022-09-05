@@ -32,7 +32,7 @@ export function Contact() {
           {socials.map((social, index) => {
             if (social.socialIcon === "mail") {
               return (
-                <div key={index}>
+                <div className={styles.mail} key={index}>
                   {hasCopied && (
                     <div className={styles.notifiction}>email copied!</div>
                   )}
