@@ -1,7 +1,14 @@
 .root {
-  max-width: 576px;
-  margin-left: auto;
-  margin-right: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  max-width: 575px;
   padding-top: 196px;
   padding-bottom: 128px;
+
+  @media (max-width: 575px) {
+    padding: 16px;
+  }
 }

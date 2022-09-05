@@ -8,5 +8,9 @@ type ContainerPropps = {
 };
 
 export const Container: FC<ContainerPropps> = ({ children }) => {
-  return <div className={styles.root}>{children}</div>;
+  return (
+    <div className={styles.root}>
+      <div className={styles.container}>{children}</div>
+    </div>
+  );
 };

@@ -26,13 +26,13 @@ export function Contact() {
       <div className={styles.information}>
         <div className={styles.location}>
           <FeatherIcon icon="map-pin" size="14" />
-          <p>Currently in Amsterdam, Netherlands</p>
+          <p>Currently in Paris, France</p>
         </div>
         <div className={styles.social}>
           {socials.map((social, index) => {
             if (social.socialIcon === "mail") {
               return (
-                <>
+                <div key={index}>
                   {hasCopied && (
                     <div className={styles.notifiction}>email copied!</div>
                   )}
@@ -43,7 +43,7 @@ export function Contact() {
                   >
                     <FeatherIcon icon={social.socialIcon} size="16" />
                   </CopyToClipboard>
-                </>
+                </div>
               );
             }
 
