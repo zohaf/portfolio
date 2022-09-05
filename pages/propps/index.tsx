@@ -25,6 +25,7 @@ const propps: NextPage = () => (
     header={{ title: "Junior Front-end Developer", detail: "Propps" }}
     images={imagePaths}
     description={{ title: descriptionTitle, items: descriptionItems }}
+    imageSizes={{ width: 566, height: 376 }}
   />
 );
 

@@ -19,6 +19,7 @@ const eatfirst: NextPage = () => (
     header={{ title: "Junior Front-end Developer", detail: "EatFirst" }}
     images={imagePaths}
     description={{ title: descriptionTitle, items: descriptionItems }}
+    imageSizes={{ width: 566, height: 328 }}
   />
 );
 

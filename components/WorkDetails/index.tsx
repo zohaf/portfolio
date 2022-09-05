@@ -13,6 +13,10 @@ type WorkDetailsProps = {
   header: { title: string; detail: String };
   images: String[];
   description: { title: string; items: String[] };
+  imageSizes: {
+    width: number;
+    height: number;
+  };
 };
 
 export const WorkDetails: FC<WorkDetailsProps> = ({
@@ -20,6 +24,7 @@ export const WorkDetails: FC<WorkDetailsProps> = ({
   header,
   images,
   description,
+  imageSizes,
 }) => {
   return (
     <Container>
@@ -35,7 +40,10 @@ export const WorkDetails: FC<WorkDetailsProps> = ({
         />
         <Card.Body>
           <br />
-          <div className={styles.wrapper}>
+          <div
+            className={styles.wrapper}
+            style={{ "--wrapper-max-height": `${imageSizes.height}px` }}
+          >
             {images.map((imagePath, index) => {
               return (
                 <>
@@ -43,8 +51,9 @@ export const WorkDetails: FC<WorkDetailsProps> = ({
                     key={index}
                     src={`/${companyName}_${imagePath}.png`}
                     alt="added features to the app"
-                    width={566}
-                    height={376}
+                    width={imageSizes.width}
+                    height={imageSizes.height}
+                    layout="responsive"
                   />
                   <br />
                 </>
