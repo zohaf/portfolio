@@ -6,9 +6,7 @@
 .wrapper {
   overflow: auto;
   white-space: nowrap;
-  max-height: 376px;
-  margin-top: 8px;
-  margin-left: 5px;
+  max-height: var(--wrapper-max-height);
 }
 
 .text {
