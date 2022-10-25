@@ -1,6 +1,5 @@
 import type { FC } from "react";
 import { ReactNode } from "react";
-import classnames from "classnames";
 import styles from "./Container.module.scss";
 
 type ContainerPropps = {

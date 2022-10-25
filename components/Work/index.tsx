@@ -29,7 +29,7 @@ export function Work() {
       <Card>
         <Card.Header
           title={{ type: "link", text: "Eatfirst" }}
-          detail="Sydney, Australia | May 21 - Sept 21"
+          detail="Sydney, Australia | Mar 21 - Aug 21"
           logo={<EatfirstLogo />}
           divider
         />

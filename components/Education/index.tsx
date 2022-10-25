@@ -1,5 +1,4 @@
 import { Card } from "../Card";
-import { EatfirstLogo } from "../Icons/EatfirstLogo";
 import { ProppsLogo } from "../Icons/ProppsLogo";
 import styles from "./Education.module.scss";
 
@@ -10,7 +9,7 @@ export function Education() {
       <Card>
         <Card.Header
           title={{ type: "text", text: "General Assembly" }}
-          detail="Software Engineering Immersive | Mar 21"
+          detail="Software Engineering Immersive | Dec 20 - Mar 21"
           logo={<ProppsLogo />}
         />
         <Card.Body>

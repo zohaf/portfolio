@@ -26,7 +26,7 @@ export function Contact() {
       <div className={styles.information}>
         <div className={styles.location}>
           <FeatherIcon icon="map-pin" size="14" />
-          <p>Currently in Paris, France</p>
+          <p>Currently in Istanbul, Turkey</p>
         </div>
         <div className={styles.social}>
           {socials.map((social, index) => {
