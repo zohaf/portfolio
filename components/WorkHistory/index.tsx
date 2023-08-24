@@ -17,13 +17,14 @@ export function Work() {
         />
         <Card.Body>
           <p>
-            building responsive UI features in react app with typescript. Taking
-            responsibility for the design system and some of the feature
-            designs.
+            Charged with taking ownership of the frontend, I initiated and
+            executed an infrastructure upgrade to add Vite, TypeScript, and
+            Tailwind. Alongside this, I undertook the redesign of the UI whilst
+            releasing new features.
           </p>
         </Card.Body>
         <Card.Footer>
-          <p>NextJS, React, TypeScript, GraphQL, jest + emotion</p>
+          <p>React, TypeScript, GraphQL, Tailwind</p>
         </Card.Footer>
       </Card>
       <Card>

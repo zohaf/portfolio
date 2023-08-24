@@ -22,7 +22,7 @@ const descriptionItems = [
 const propps: NextPage = () => (
   <WorkDetails
     companyName="propps"
-    header={{ title: "Junior Front-end Developer", detail: "Propps" }}
+    header={{ title: "Junior Software Engineer", detail: "Propps" }}
     images={imagePaths}
     description={{ title: descriptionTitle, items: descriptionItems }}
     imageSizes={{ width: 566, height: 376 }}
