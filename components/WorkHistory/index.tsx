@@ -1,6 +1,7 @@
 import { Card } from "../Card";
 import { EatfirstLogo } from "../Icons/EatfirstLogo";
 import { ProppsLogo } from "../Icons/ProppsLogo";
+import { BaskingLogo } from "../Icons/BaskingLogo";
 import styles from "./Work.module.scss";
 
 export function Work() {
@@ -9,8 +10,26 @@ export function Work() {
       <h2>Work</h2>
       <Card>
         <Card.Header
+          title={{ type: "link", text: "Basking" }}
+          detail="Remote, European timezone | Jan 23 - Aug 23"
+          logo={<BaskingLogo />}
+          divider
+        />
+        <Card.Body>
+          <p>
+            building responsive UI features in react app with typescript. Taking
+            responsibility for the design system and some of the feature
+            designs.
+          </p>
+        </Card.Body>
+        <Card.Footer>
+          <p>NextJS, React, TypeScript, GraphQL, jest + emotion</p>
+        </Card.Footer>
+      </Card>
+      <Card>
+        <Card.Header
           title={{ type: "link", text: "Propps" }}
-          detail="Remote, Australia | Sept 21 - Jul 22"
+          detail="Remote, Australia | Sept 21 - Dec 22"
           logo={<ProppsLogo />}
           divider
         />
