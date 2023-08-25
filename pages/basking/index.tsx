@@ -1,16 +1,16 @@
 import type { NextPage } from "next";
 import { WorkDetails } from "../../components/WorkDetails";
 
-const imagePaths = ["cardOffer", "offerDetails", "login", "signUp"];
+const imagePaths = ["oppCards"];
 
 const descriptionTitle =
   "As part of Engineering team at Basking, my day to day looked like:";
 
 const descriptionItems = [
-  "adding new features to a greenfield project, working autonomsly as well as pair programming from different time zones",
-  "expanding our component library, improving our design system, and maintaing an updated storybook",
-  "experiment and implement MVPs with product team to help grow our acquisition channels",
-  "Learning how to write simple tests",
+  "upgrade Frontend Infrastructure by adding Vite, TypeScript and Tailwind",
+  "Initiate a reusable component library and establish a design system",
+  "improve the UI by identifying bugs and common patterns, and implementing solutions",
+  "lead the redesign of features, refined user flows, and established visual uniformity through updated design tokens",
 ];
 
 const basking: NextPage = () => (

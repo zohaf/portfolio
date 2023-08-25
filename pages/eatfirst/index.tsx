@@ -7,8 +7,8 @@ const descriptionTitle =
   "As part of the Frontend team at EatFirst, my day to day looked like:";
 
 const descriptionItems = [
-  "adding new features to a greenfield project, working autonomsly as well as pair programming from different time zones",
-  "expanding our component library, improving our design system, and maintaing an updated storybook",
+  "adding new features to a greenfield project, working autonomously as well as pair programming from different time zones",
+  "expanding our component library, improving our design system, and maintaining an updated storybook",
   "experiment and implement MVPs with product team to help grow our acquisition channels",
   "Learning how to write simple tests",
 ];

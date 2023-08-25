@@ -15,11 +15,9 @@ export function Education() {
         <Card.Body>
           <p>
             {" "}
-            Main Project:{" "}
-            <a href="https://justclipit.netlify.app/landing">PaperClip</a> a
-            realtime chat application that allows you to jump in and chat with
-            anyone who is online. It also lets you save (clip) your favourite
-            conversations and dialogues
+            Main Project: PaperClip a realtime chat application that allows you
+            to jump in and chat with anyone who is online. It also lets you save
+            (clip) your favourite conversations and dialogues
           </p>
         </Card.Body>
         <Card.Footer>
