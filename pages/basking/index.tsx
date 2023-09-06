@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import { WorkDetails } from "../../components/WorkDetails";
 
-const imagePaths = ["oppCards"];
+const imagePaths = ["oppCard"];
 
 const descriptionTitle =
   "As part of Engineering team at Basking, my day to day looked like:";
