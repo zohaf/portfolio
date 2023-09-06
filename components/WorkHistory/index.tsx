@@ -11,7 +11,7 @@ export function Work() {
       <Card>
         <Card.Header
           title={{ type: "link", text: "Basking" }}
-          detail="Remote, European timezone | Jan 23 - Aug 23"
+          detail="Remote, European timezone | Jan 23 - Sep 23"
           logo={<BaskingLogo />}
           divider
         />
@@ -30,7 +30,7 @@ export function Work() {
       <Card>
         <Card.Header
           title={{ type: "link", text: "Propps" }}
-          detail="Remote, Australia | Sept 21 - Dec 22"
+          detail="Remote, Australia | Sep 21 - Dec 22"
           logo={<ProppsLogo />}
           divider
         />
