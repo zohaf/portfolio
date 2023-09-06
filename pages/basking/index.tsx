@@ -15,7 +15,7 @@ const descriptionItems = [
 
 const basking: NextPage = () => (
   <WorkDetails
-    companyName="Basking"
+    companyName="basking"
     header={{ title: "Frontend Engineer", detail: "Basking" }}
     images={imagePaths}
     description={{ title: descriptionTitle, items: descriptionItems }}
