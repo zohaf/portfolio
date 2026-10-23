@@ -1,5 +1,4 @@
 import "../styles/globals.css";
-import "@fontsource/ibm-plex-sans";
 import type { AppProps } from "next/app";
 import Head from "next/head";
 
@@ -8,7 +7,9 @@ function MyApp({ Component, pageProps }: AppProps) {
     <>
       <Head>
         <title>Zoha Fard</title>
-        <meta name="description" content="portfolio" />
+        <meta name="description" content="Zoha Fard, design engineer." />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#2a5dbd" />
         <link rel="icon" href="/circle.svg" />
       </Head>
       <Component {...pageProps} />
