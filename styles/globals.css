@@ -14,8 +14,6 @@ html,
 body {
   margin: 0;
   padding: 0;
-  height: 100%;
-  overflow: hidden;
   background: #0d1018;
   color: white;
   font-family: "Aspekta", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -27,6 +25,14 @@ body {
   position: fixed;
   inset: 0;
   overflow: hidden;
+}
+
+.strip {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  will-change: transform;
 }
 
 .paint {
@@ -55,6 +61,15 @@ body {
   display: flex;
   justify-content: center;
   padding: 20px 16px;
+  z-index: 1;
+}
+
+.header {
+  transition: color 0.3s;
+}
+
+.header.dark {
+  color: #0d1018;
 }
 
 .header h1 {
