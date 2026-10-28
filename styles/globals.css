@@ -6,18 +6,40 @@
   font-display: swap;
 }
 
+/* AspektaVF.woff2 draws the quote marks as blank space: take only those from a system font */
+@font-face {
+  font-family: "Quotes";
+  src: local("Helvetica Neue"), local("HelveticaNeue"), local("Arial"), local("Roboto");
+  unicode-range: U+0022, U+0027, U+2018-201F;
+}
+
+/* Profile layout from ../design/profile.html */
+:root {
+  --ink: #16171b;
+  --muted: #6a6d74;
+  --line: rgba(22, 23, 27, 0.16);
+  --g: max(clamp(16px, 3vw, 40px), env(safe-area-inset-left, 0px), env(safe-area-inset-right, 0px));
+  color-scheme: light;
+}
+
 * {
   box-sizing: border-box;
+  margin: 0;
 }
 
 html,
 body {
-  margin: 0;
   padding: 0;
-  background: #0d1018;
-  color: white;
-  font-family: "Aspekta", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: #fff;
+  color: var(--ink);
+  font-family: "Quotes", "Aspekta", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.4;
   -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
 /* Dawn sky: palette A (Horizon), Haze treatment. Source: ../design/ */
@@ -25,6 +47,7 @@ body {
   position: fixed;
   inset: 0;
   overflow: hidden;
+  z-index: 0;
 }
 
 .strip {
@@ -53,29 +76,193 @@ body {
   pointer-events: none;
 }
 
-.header {
+main {
+  position: relative;
+  z-index: 1;
+}
+
+.nav {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  display: flex;
-  justify-content: center;
-  padding: 20px 16px;
-  z-index: 1;
-}
-
-.header {
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  padding: 18px var(--g);
+  font-size: 13px;
+  color: #fff;
   transition: color 0.3s;
 }
 
-.header.dark {
-  color: #0d1018;
+.nav ul {
+  display: flex;
+  gap: 14px;
+  list-style: none;
+  padding: 0;
 }
 
-.header h1 {
-  margin: 0;
-  font-size: 14px;
-  font-weight: 400;
-  letter-spacing: 0.01em;
+.nav .end {
+  letter-spacing: 0.02em;
   text-transform: uppercase;
+}
+
+.nav .end:last-child {
+  text-align: right;
+}
+
+.nav.dark {
+  color: var(--ink);
+}
+
+.row {
+  display: grid;
+  grid-template-columns: minmax(100px, 160px) 1fr;
+  gap: 16px;
+  padding: 0 var(--g);
+}
+
+.row > small {
+  font-size: 12px;
+  padding-top: 0.9em;
+}
+
+.big {
+  font-size: clamp(26px, 3.3vw, 48px);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  max-width: 30ch;
+}
+
+.hero {
+  min-height: 100vh;
+  min-height: 100svh;
+  color: #fff;
+  padding-top: 14vh;
+  padding-bottom: 14vh;
+}
+
+.intro p {
+  font-size: clamp(17px, 1.5vw, 22px);
+  line-height: 1.45;
+  max-width: 46ch;
+  margin-top: 1.1em;
+}
+
+.intro p a {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+
+.cols {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 40px;
+  padding: 0 var(--g);
+  margin-top: 40vh;
+}
+
+.list {
+  display: grid;
+  grid-template-columns: minmax(100px, 160px) 1fr;
+  gap: 16px;
+  font-size: 13px;
+}
+
+.list ul,
+.links ul {
+  list-style: none;
+  padding: 0;
+  line-height: 1.5;
+}
+
+.list li span {
+  color: var(--muted);
+}
+
+.timeline {
+  padding: 0 var(--g);
+  margin-top: 140px;
+}
+
+.timeline h2 {
+  font-size: 12px;
+  font-weight: 400;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--line);
+}
+
+.timeline ul {
+  padding: 0;
+}
+
+.timeline li {
+  list-style: none;
+  display: grid;
+  grid-template-columns: minmax(100px, 160px) 1fr auto;
+  gap: 16px;
+  align-items: baseline;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.timeline li b {
+  font-size: clamp(24px, 3vw, 40px);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+
+.timeline li span {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.timeline li em {
+  display: block;
+  font-style: normal;
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 6px;
+  max-width: 52ch;
+}
+
+.links {
+  margin-top: 140px;
+  font-size: 13px;
+}
+
+.contact {
+  margin: 64px var(--g);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 0;
+}
+
+.contact span {
+  font-size: clamp(44px, 15vw, 240px);
+  line-height: 0.85;
+  letter-spacing: -0.05em;
+}
+
+@media (max-width: 640px) {
+  .row,
+  .list {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+  .nav ul {
+    display: none;
+  }
+  .nav {
+    grid-template-columns: 1fr 1fr;
+  }
+  .timeline li {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
 }

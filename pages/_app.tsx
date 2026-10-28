@@ -7,7 +7,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     <>
       <Head>
         <title>Zoha Fard</title>
-        <meta name="description" content="Zoha Fard, design engineer." />
+        <meta name="description" content="Zoha Fard, product engineer." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#2a5dbd" />
         <link rel="icon" href="/circle.svg" />
