@@ -1,5 +1,5 @@
 import type { NextPage } from "next";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 // @ts-ignore -- plain JS module, copy of ../design/dawn.js
 import { renderDawn, hazeFilter, GRAIN_FILTER } from "../lib/dawn";
 
@@ -9,6 +9,33 @@ import { renderDawn, hazeFilter, GRAIN_FILTER } from "../lib/dawn";
 const S = 3.5;
 
 const EMAIL = "zohafard@gmail.com";
+const LINKEDIN = "https://www.linkedin.com/in/zohaf";
+
+// Copies the email address; the label reads "Email copied" for 2 s.
+// Falls back to a mailto link when the browser blocks clipboard access.
+const CopyEmail = ({ label = "Copy my email" }: { label?: string }) => {
+  const [copied, setCopied] = useState(false);
+  const timer = useRef<ReturnType<typeof setTimeout>>();
+  useEffect(() => () => clearTimeout(timer.current), []);
+
+  const copy = async () => {
+    try {
+      await navigator.clipboard.writeText(EMAIL);
+    } catch {
+      window.location.href = `mailto:${EMAIL}`;
+      return;
+    }
+    setCopied(true);
+    clearTimeout(timer.current);
+    timer.current = setTimeout(() => setCopied(false), 2000);
+  };
+
+  return (
+    <button type="button" className="copy" onClick={copy} aria-live="polite">
+      {copied ? "Email copied" : label}
+    </button>
+  );
+};
 
 const TIMELINE = [
   {
@@ -44,7 +71,6 @@ const Home: NextPage = () => {
   const canvas = useRef<HTMLCanvasElement>(null);
   const grain = useRef<HTMLDivElement>(null);
   const cols = useRef<HTMLElement>(null);
-  const nav = useRef<HTMLElement>(null);
 
   useEffect(() => {
     let fh = 0;
@@ -55,7 +81,6 @@ const Home: NextPage = () => {
       if (!strip.current) return;
       const p = Math.min(1, Math.max(0, window.scrollY / travel));
       strip.current.style.transform = `translate3d(0, ${p * (S - 1) * fh}px, 0)`;
-      nav.current?.classList.toggle("dark", p > 0.55);
     };
 
     const draw = () => {
@@ -110,21 +135,6 @@ const Home: NextPage = () => {
         </div>
       </div>
 
-      <nav className="nav" ref={nav}>
-        <span className="end">Zoha Fard</span>
-        <ul>
-          <li>
-            <a href="#timeline">Timeline</a>
-          </li>
-          <li>
-            <a href="#contact">Contact</a>
-          </li>
-        </ul>
-        <a className="end" href={`mailto:${EMAIL}`}>
-          Email
-        </a>
-      </nav>
-
       <main>
         <section className="hero row">
           <small>Profile</small>
@@ -141,9 +151,15 @@ const Home: NextPage = () => {
               with modern technologies, design systems in Storybook, and experiments measured with user data.
             </p>
             <p>
-              Thirty-something, finally moving to Berlin &amp; I’m currently building my own app,{" "}
+              Thirty-something, finally moving to Berlin, and on the side I’m building my own app,{" "}
               <a href="https://kahkeshan.vercel.app/">kahkeshan</a>.
             </p>
+            <div className="actions">
+              <CopyEmail />
+              <a href={LINKEDIN} target="_blank" rel="noopener noreferrer">
+                Connect via LinkedIn
+              </a>
+            </div>
           </div>
         </section>
 
@@ -153,7 +169,9 @@ const Home: NextPage = () => {
             <ul>
               <li>React, Next.js, TypeScript</li>
               <li>Storybook, design systems</li>
+              <li>Figma, accessibility</li>
               <li>GraphQL, server-side rendering</li>
+              <li>Jest, React Testing Library, CI/CD</li>
               <li>PostHog, A/B testing, feature flags</li>
               <li>Claude Code</li>
             </ul>
@@ -196,25 +214,15 @@ const Home: NextPage = () => {
           </ul>
         </section>
 
-        <section className="links row" id="contact">
-          <small>Contact</small>
-          <ul>
-            <li>
-              <a href={`mailto:${EMAIL}`}>Email</a>
-            </li>
-            <li>
-              <a href="https://www.linkedin.com/in/zohaf">LinkedIn</a>
-            </li>
-            <li>
-              <a href="https://github.com/zohaf">GitHub</a>
-            </li>
-          </ul>
-        </section>
-
-        <a className="contact" href={`mailto:${EMAIL}`}>
-          <span>Contact</span>
-          <span>↘</span>
-        </a>
+        <footer className="footer">
+          <CopyEmail label="Email" />
+          <a href={LINKEDIN} target="_blank" rel="noopener noreferrer">
+            LinkedIn
+          </a>
+          <a href="https://github.com/zohaf" target="_blank" rel="noopener noreferrer">
+            GitHub
+          </a>
+        </footer>
       </main>
     </>
   );
