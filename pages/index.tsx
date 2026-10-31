@@ -151,8 +151,9 @@ const Home: NextPage = () => {
               with modern technologies, design systems in Storybook, and experiments measured with user data.
             </p>
             <p>
-              Thirty-something, finally moving to Berlin, and on the side I’m building my own app,{" "}
-              <a href="https://kahkeshan.vercel.app/">kahkeshan</a>.
+              Thirty-something and finally moving to Berlin. In my spare time, I’m giving some love to my older
+              project, an English translation of the{" "}
+              <a href="https://yoga-sutra.vercel.app/">Yoga Sutra of Patanjali</a>.
             </p>
             <div className="actions">
               <CopyEmail />
