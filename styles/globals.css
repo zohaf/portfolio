@@ -9,7 +9,8 @@
 /* AspektaVF.woff2 draws the quote marks as blank space: take only those from a system font */
 @font-face {
   font-family: "Quotes";
-  src: local("Helvetica Neue"), local("HelveticaNeue"), local("Arial"), local("Roboto");
+  src: local("Helvetica Neue"), local("HelveticaNeue"), local("Arial"),
+    local("Roboto");
   unicode-range: U+0022, U+0027, U+2018-201F;
 }
 
@@ -18,7 +19,11 @@
   --ink: #16171b;
   --muted: #6a6d74;
   --line: rgba(22, 23, 27, 0.16);
-  --g: max(clamp(16px, 3vw, 40px), env(safe-area-inset-left, 0px), env(safe-area-inset-right, 0px));
+  --g: max(
+    clamp(16px, 3vw, 40px),
+    env(safe-area-inset-left, 0px),
+    env(safe-area-inset-right, 0px)
+  );
   color-scheme: light;
 }
 
@@ -32,7 +37,8 @@ body {
   padding: 0;
   background: #fff;
   color: var(--ink);
-  font-family: "Quotes", "Aspekta", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Quotes", "Aspekta", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, sans-serif;
   line-height: 1.4;
   -webkit-font-smoothing: antialiased;
 }
@@ -112,7 +118,7 @@ main {
 .intro p {
   font-size: clamp(17px, 1.5vw, 22px);
   line-height: 1.45;
-  max-width: 46ch;
+  max-width: 62ch;
   margin-top: 1.1em;
 }
 
@@ -262,15 +268,368 @@ main {
     justify-content: space-between;
   }
   /* role directly under the company name, in ink and bold */
-  .timeline li div {
+  .timeline li > div {
     display: contents;
   }
-  .timeline li > span:last-child {
+  .timeline li > span:last-child,
+  .timeline .more-role {
     order: 1;
     color: var(--ink);
     font-weight: 600;
   }
   .timeline li em {
     order: 2;
+  }
+}
+
+/* LineupBridge row: opens in place to the summary, three areas and links */
+.more summary {
+  list-style: none;
+  cursor: pointer;
+  position: relative;
+  padding-right: 32px;
+}
+
+.more summary::-webkit-details-marker {
+  display: none;
+}
+
+/* plus that turns into a minus when open */
+.more summary::before,
+.more summary::after {
+  content: "";
+  position: absolute;
+  right: 4px;
+  top: calc(0.5 * clamp(24px, 3vw, 40px));
+  width: 14px;
+  height: 1px;
+  background: currentColor;
+  transition: transform 0.25s ease;
+}
+
+.more summary::after {
+  transform: rotate(90deg);
+}
+
+.more[open] summary::after {
+  transform: rotate(0deg);
+}
+
+.more summary:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 4px;
+}
+
+.timeline .more-role {
+  display: none;
+}
+
+.more-body {
+  padding-top: 24px;
+  max-width: 72ch;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.more dl {
+  margin-top: 24px;
+}
+
+.more dl > div {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 16px;
+  padding: 14px 0;
+  border-top: 1px solid var(--line);
+}
+
+.more dt {
+  font-size: 12px;
+  padding-top: 0.2em;
+}
+
+.more dd {
+  margin: 0;
+  color: var(--muted);
+}
+
+.more-links,
+.cs-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  margin-top: 24px;
+  font-size: 13px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.more-links a,
+.cs-links a {
+  border-bottom: 1px solid var(--line);
+  transition: border-color 0.2s;
+}
+
+.more-links a:hover,
+.cs-links a:hover {
+  border-color: currentColor;
+}
+
+/* Case study: /lineupbridge */
+.cs {
+  padding-bottom: 32px;
+}
+
+.cs-nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 18px var(--g);
+  font-size: 13px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.cs-head {
+  padding-top: 14vh;
+}
+
+.cs-head h1 {
+  font-size: clamp(44px, 9vw, 140px);
+  font-weight: 400;
+  letter-spacing: -0.04em;
+  line-height: 0.95;
+}
+
+.cs-lead {
+  font-size: clamp(17px, 1.5vw, 22px);
+  line-height: 1.45;
+  max-width: 62ch;
+  margin-top: 1.1em;
+}
+
+.cs-meta {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 1.4em;
+}
+
+.cs-section {
+  margin-top: 140px;
+}
+
+.cs-section > div > h2 {
+  font-size: clamp(26px, 3.3vw, 48px);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  max-width: 30ch;
+}
+
+.cs-section p,
+.cs-section li {
+  font-size: 15px;
+  line-height: 1.55;
+  max-width: 68ch;
+}
+
+.cs-section p {
+  margin-top: 1em;
+}
+
+.cs-section ul {
+  padding-left: 1.1em;
+  margin-top: 1em;
+}
+
+.cs-section li + li {
+  margin-top: 0.5em;
+}
+
+.cs-section code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.9em;
+}
+
+/* Slider: scroll-snap track, next slide peeks in from the right */
+.cs-slider {
+  margin-top: 40px;
+}
+
+.cs-track {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  padding: 0 var(--g);
+  scroll-padding: 0 var(--g);
+}
+
+.cs-track::-webkit-scrollbar {
+  display: none;
+}
+
+.cs-track:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 4px;
+}
+
+.cs-slide {
+  flex: 0 0 78%;
+  scroll-snap-align: start;
+  transition: opacity 0.4s ease;
+}
+
+.cs-slide:not(.is-active) {
+  opacity: 0.45;
+}
+
+.cs-slide img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border-radius: 6px;
+  background: #111;
+}
+
+.cs-slide figcaption {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: 8px;
+  margin-top: 16px;
+  font-size: 14px;
+  line-height: 1.5;
+  max-width: 64ch;
+}
+
+.cs-slide figcaption b {
+  display: block;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.cs-slide figcaption span:first-child {
+  font-size: 12px;
+  color: var(--muted);
+  padding-top: 0.2em;
+}
+
+.cs-slide figcaption p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.cs-controls {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 24px var(--g) 0;
+  font-size: 13px;
+}
+
+.cs-controls button {
+  font: inherit;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  background: none;
+  color: var(--ink);
+  cursor: pointer;
+  transition: border-color 0.2s, opacity 0.2s;
+}
+
+.cs-controls button:hover {
+  border-color: var(--ink);
+}
+
+.cs-controls button:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.cs-controls button:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 2px;
+}
+
+.cs-count {
+  font-variant-numeric: tabular-nums;
+  color: var(--muted);
+}
+
+.cs-logos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.cs-logos figure {
+  margin: 0;
+}
+
+.cs-logos .plate {
+  background: #000;
+  border-radius: 6px;
+  aspect-ratio: 16 / 7;
+  display: grid;
+  place-items: center;
+}
+
+.cs-logos img {
+  width: 46%;
+  height: auto;
+}
+
+.cs-logos figcaption {
+  margin-top: 12px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+.cs-logos figcaption b {
+  display: block;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cs-track {
+    scroll-behavior: auto;
+  }
+  .cs-slide,
+  .more summary::before,
+  .more summary::after {
+    transition: none;
+  }
+}
+
+/* Phones: after the base rules above so these win */
+@media (max-width: 640px) {
+  .timeline .more-role {
+    display: block;
+    margin-top: 4px;
+  }
+  .timeline li.has-more > span:last-child {
+    display: none;
+  }
+  .more summary::before,
+  .more summary::after {
+    top: 0.6em;
+  }
+  .more dl > div {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+  .cs-slide {
+    flex-basis: 88%;
+  }
+  .cs-logos {
+    grid-template-columns: 1fr;
   }
 }

@@ -1,5 +1,7 @@
 import type { NextPage } from "next";
+import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import { LB_AREAS, LB_LINKS, LB_SUMMARY } from "../lib/lineupbridge";
 // @ts-ignore -- plain JS module, copy of ../design/dawn.js
 import { renderDawn, hazeFilter, GRAIN_FILTER } from "../lib/dawn";
 
@@ -42,7 +44,8 @@ const TIMELINE = [
     years: "2026 — Now",
     name: "LineupBridge",
     note: "DJ booking marketplace: product, design and engineering, concept to production.",
-    role: "Product Engineer",
+    role: "Design Engineer",
+    expand: true,
   },
   {
     years: "2025 — 2026",
@@ -139,7 +142,7 @@ const Home: NextPage = () => {
         <section className="hero row">
           <small>Profile</small>
           <div className="intro">
-            <h1 className="big">I’m Zoha, a product engineer.</h1>
+            <h1 className="big">I’m Zoha, a design engineer.</h1>
             <p>
               This year I delivered <a href="https://www.lineupbridge.com">LineupBridge</a>, a booking marketplace
               for DJs, as the only engineer, designer and product person, working with the founder. I decided what
@@ -203,12 +206,45 @@ const Home: NextPage = () => {
           <h2>Timeline</h2>
           <ul>
             {TIMELINE.map((t) => (
-              <li key={t.name}>
+              <li key={t.name} className={t.expand ? "has-more" : undefined}>
                 <span>{t.years}</span>
-                <div>
-                  <b>{t.name}</b>
-                  <em>{t.note}</em>
-                </div>
+                {t.expand ? (
+                  // Native disclosure: keyboard and screen-reader support without script
+                  <details className="more">
+                    <summary>
+                      <b>{t.name}</b>
+                      <span className="more-role">{t.role}</span>
+                      <em>{t.note}</em>
+                    </summary>
+                    <div className="more-body">
+                      <p>{LB_SUMMARY}</p>
+                      <dl>
+                        {LB_AREAS.map((a) => (
+                          <div key={a.title}>
+                            <dt>{a.title}</dt>
+                            <dd>{a.text}</dd>
+                          </div>
+                        ))}
+                      </dl>
+                      <div className="more-links">
+                        <Link href="/lineupbridge">
+                          <a>Case study</a>
+                        </Link>
+                        <a href={LB_LINKS.live} target="_blank" rel="noopener noreferrer">
+                          Live app
+                        </a>
+                        <a href={LB_LINKS.github} target="_blank" rel="noopener noreferrer">
+                          GitHub
+                        </a>
+                      </div>
+                    </div>
+                  </details>
+                ) : (
+                  <div>
+                    <b>{t.name}</b>
+                    <em>{t.note}</em>
+                  </div>
+                )}
                 <span>{t.role}</span>
               </li>
             ))}
