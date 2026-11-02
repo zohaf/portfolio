@@ -286,6 +286,13 @@ main {
   text-align: left;
 }
 
+/* End column: roles and the last footer link sit on the page's right edge */
+.timeline li > span:last-child,
+.footer > :last-child {
+  justify-self: end;
+  text-align: right;
+}
+
 /* Phones: the skeleton becomes one column; rows stack with the smallest step */
 @media (max-width: 640px) {
   :root {
@@ -310,6 +317,8 @@ main {
   .timeline li > span:last-child,
   .timeline .more-role {
     order: 1;
+    justify-self: start;
+    text-align: left;
     color: var(--ink);
     font-weight: 600;
   }
