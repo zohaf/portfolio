@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { LB_AREAS, LB_LINKS, LB_SUMMARY } from "../lib/lineupbridge";
 // @ts-ignore -- plain JS module, copy of ../design/dawn.js
 import { renderDawn, hazeFilter, GRAIN_FILTER } from "../lib/dawn";
+import External from "../components/External";
 
 // Profile layout from ../design/profile.html.
 // The strip is S frames tall; its top frame is pure white. Scrolling moves it from the dawn frame
@@ -43,14 +44,14 @@ const TIMELINE = [
   {
     years: "2026 — Now",
     name: "LineupBridge",
-    note: "DJ booking marketplace: product, design and engineering, concept to production.",
-    role: "Design Engineer",
+    note: "DJ booking marketplace: product, design and engineering, from user research to production.",
+    role: "Product Engineer",
     expand: true,
   },
   {
     years: "2025 — 2026",
     name: "Digistore24",
-    note: "Onboarding in Next.js; navigation redesign; PostHog experiments; shared components.",
+    note: "Internal platform and onboarding in Next.js; navigation reshaped from PostHog experiments; layout rules for the design system.",
     role: "Frontend Engineer",
   },
   {
@@ -62,7 +63,7 @@ const TIMELINE = [
   {
     years: "2021 — 2022",
     name: "Propps",
-    note: "Next.js and GraphQL application; frontend architecture and reusable UI components.",
+    note: "Next.js application and its GraphQL API; design system published from a monorepo.",
     role: "Software Engineer",
   },
 ];
@@ -142,33 +143,32 @@ const Home: NextPage = () => {
         <section className="hero row">
           <small>Profile</small>
           <div className="intro">
-            <h1 className="big">I’m Zoha, a design engineer.</h1>
+            <h1 className="big">I’m Zoha, a product engineer.</h1>
             <p>
-              This year I delivered <a href="https://www.lineupbridge.com">LineupBridge</a>, a booking marketplace
-              for DJs, as the only engineer, designer and product person, working with the founder. I decided what
-              the MVP would deliver and defined the brand identity and the app’s interface. I set up the front-end
-              architecture and design system so the build could change as user data changed the scope.
+              I recently delivered <External href="https://www.lineupbridge.com">LineupBridge</External>, a booking
+              marketplace for DJs, as the only engineer, designer and product person, working directly with the founder.
+              I decided what the MVP would deliver and defined the brand identity and the app’s interface. I set up the
+              front-end architecture and design system so the build could change as user data changed the scope.
             </p>
             <p>
-              Before that, five years in product teams at Digistore24, Gotphoto and Propps: front-end architecture
-              with modern technologies, design systems in Storybook, and experiments measured with user data.
+              Before that, five years in product teams at Digistore24, Gotphoto and Propps: end-to-end feature
+              ownership, front-end architecture with modern technologies, design systems in Storybook, and experiments
+              measured with user data.
             </p>
             <p>
               Thirty-something and finally moving to Berlin. In my spare time, I’m giving some love to my older
               project, an English translation of the{" "}
-              <a href="https://yoga-sutra.vercel.app/">Yoga Sutra of Patanjali</a>.
+              <External href="https://yoga-sutra.vercel.app/">Yoga Sutra</External>.
             </p>
             <div className="actions">
               <CopyEmail />
-              <a href={LINKEDIN} target="_blank" rel="noopener noreferrer">
-                Connect via LinkedIn
-              </a>
+              <External href={LINKEDIN}>Connect via LinkedIn</External>
             </div>
           </div>
         </section>
 
-        <section className="cols" ref={cols}>
-          <div className="list">
+        <section className="about" ref={cols}>
+          <div className="row list">
             <small>Tools</small>
             <ul>
               <li>React, Next.js, TypeScript</li>
@@ -180,7 +180,7 @@ const Home: NextPage = () => {
               <li>Claude Code</li>
             </ul>
           </div>
-          <div className="list">
+          <div className="row list">
             <small>Education</small>
             <ul>
               <li>
@@ -202,7 +202,7 @@ const Home: NextPage = () => {
           </div>
         </section>
 
-        <section className="timeline" id="timeline">
+        <section className="timeline row" id="timeline">
           <h2>Timeline</h2>
           <ul>
             {TIMELINE.map((t) => (
@@ -230,12 +230,8 @@ const Home: NextPage = () => {
                         <Link href="/lineupbridge">
                           <a>Case study</a>
                         </Link>
-                        <a href={LB_LINKS.live} target="_blank" rel="noopener noreferrer">
-                          Live app
-                        </a>
-                        <a href={LB_LINKS.github} target="_blank" rel="noopener noreferrer">
-                          GitHub
-                        </a>
+                        <External href={LB_LINKS.live}>Live app</External>
+                        <External href={LB_LINKS.github}>GitHub</External>
                       </div>
                     </div>
                   </details>
@@ -253,12 +249,8 @@ const Home: NextPage = () => {
 
         <footer className="footer">
           <CopyEmail label="Email" />
-          <a href={LINKEDIN} target="_blank" rel="noopener noreferrer">
-            LinkedIn
-          </a>
-          <a href="https://github.com/zohaf" target="_blank" rel="noopener noreferrer">
-            GitHub
-          </a>
+          <External href={LINKEDIN}>LinkedIn</External>
+          <External href="https://github.com/zohaf">GitHub</External>
         </footer>
       </main>
     </>

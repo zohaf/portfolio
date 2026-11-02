@@ -3,6 +3,7 @@ import Head from "next/head";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { LB_LINKS, LB_SUMMARY } from "../lib/lineupbridge";
+import External from "../components/External";
 
 // Landing concepts in the order they were explored. Screenshots of the prototype pages, 1440 × 900.
 const CONCEPTS = [
@@ -98,12 +99,6 @@ const ConceptSlider = () => {
     </div>
   );
 };
-
-const External = ({ href, children }: { href: string; children: string }) => (
-  <a href={href} target="_blank" rel="noopener noreferrer">
-    {children}
-  </a>
-);
 
 const LineupBridge: NextPage = () => (
   <>
