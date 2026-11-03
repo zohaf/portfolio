@@ -17,6 +17,8 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#2a5dbd" />
         <link rel="icon" href="/circle.svg" />
+        {/* iMessage and iOS ignore SVG icons; they read the apple-touch-icon, then favicon.ico. */}
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
       </Head>
       <Component {...pageProps} />
     </>
