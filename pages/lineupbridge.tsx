@@ -105,6 +105,12 @@ const LineupBridge: NextPage = () => (
     <Head>
       <title>LineupBridge · Zoha Fard</title>
       <meta name="description" content="LineupBridge case study: product, engineering and design by Zoha Fard." />
+      <meta key="og:title" property="og:title" content="LineupBridge · Zoha Fard" />
+      <meta
+        key="og:description"
+        property="og:description"
+        content="LineupBridge case study: product, engineering and design by Zoha Fard."
+      />
     </Head>
 
     <nav className="cs-nav">
