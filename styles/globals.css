@@ -42,9 +42,10 @@
 
   /* Type scale. Every font-size uses one of these; one size per role (see design/README.md). */
   --t-poster: clamp(44px, 9vw, 140px); /* case study title only */
-  --display: clamp(26px, 3.3vw, 48px);
-  --title: clamp(24px, 3vw, 40px);
-  --t-lead: clamp(17px, 1.5vw, 22px);
+  /* Fluid sizes stop growing at a 1260px-wide window (2026-11-07): their maximum is the size at 1260. */
+  --display: clamp(26px, 3.3vw, 41.6px);
+  --title: clamp(24px, 3vw, 37.8px);
+  --t-lead: clamp(17px, 1.5vw, 18.9px);
   --t-body: 15px;
   --t-small: 13px;
 
@@ -168,10 +169,12 @@ main {
   max-width: 30ch;
 }
 
-/* The one screen-relative section: the hero fills the dawn sky */
+/* The one screen-relative section: the hero fills the dawn sky. Its text sits on the lower part of the
+   screen, over the glow and the dark ground, where white reads best; the open sky stays above it. */
 .hero {
   min-height: 100vh;
   min-height: 100svh;
+  align-content: end;
   color: #fff;
   padding-top: 14vh;
   padding-bottom: 14vh;
@@ -322,23 +325,13 @@ main {
     justify-content: space-between;
   }
   /* role directly under the company name, in ink and bold */
-  .timeline li > div {
-    display: contents;
-  }
-  .timeline li > span:last-child,
   .timeline .more-role {
-    order: 1;
-    justify-self: start;
-    text-align: left;
     color: var(--ink);
     font-weight: 600;
   }
-  .timeline li em {
-    order: 2;
-  }
 }
 
-/* LineupBridge row: opens in place to the summary, three areas and links */
+/* Timeline rows open in place to three areas (LineupBridge also to a summary and links) */
 .more summary {
   list-style: none;
   cursor: pointer;
@@ -387,7 +380,8 @@ main {
   line-height: 1.5;
 }
 
-.more dl {
+/* gap only after the LineupBridge summary; other rows open straight to the areas */
+.more p + dl {
   margin-top: var(--s-4);
 }
 
@@ -659,7 +653,7 @@ main {
     display: block;
     margin-top: 4px;
   }
-  .timeline li.has-more > span:last-child {
+  .timeline li > span:last-child {
     display: none;
   }
   .more summary::before,

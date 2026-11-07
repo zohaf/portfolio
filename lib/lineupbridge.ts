@@ -11,20 +11,21 @@ export const LB_LINKS = {
 export const LB_SUMMARY =
   "A DJ booking marketplace. An event organiser sends a DJ an offer, both sides can counter, and the DJ accepts; the booking is paid through the platform.";
 
+// Same three areas, in the same order, as every other timeline row (pages/index.tsx).
 export const LB_AREAS = [
   {
     title: "Product",
     text:
-      "Talked with event organisers, DJs and the founder about how bookings are agreed today, and decided with the founder what the first release would do. Wrote the business rules and the negotiation flow, then prototyped the journeys."
+      "The brief was open, so I started by talking with event organisers, DJs and the founder about how bookings are agreed today. What they told us changed the core flow, and the founder and I agreed what the first release would do."
+  },
+  {
+    title: "Design engineering",
+    text:
+      "Defined the brand identity with the founder, then the user flows and the interface. Started with a light design system, documented in the code and kept in step with the design file, so it can keep changing as user data and the product evolve."
   },
   {
     title: "Engineering",
     text:
-      "Built on Sharetribe (React, Express) for listings, transactions and payments, and extended its negotiation process with counteroffers. Established the design system and shared components, in sync with Figma. Built with Claude Code, with reviewer agents and hooks checking the work."
-  },
-  {
-    title: "Design",
-    text:
-      "Owned the brand identity: defined the wordmark and the landing page with the founder."
+      "Chose an existing marketplace foundation, so the custom work went into the booking model: an offer that both sides can counter before payment. Built with Claude Code from rules and specs kept in the repository, with reviewer agents checking each change."
   }
 ];

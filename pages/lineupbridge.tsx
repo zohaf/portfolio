@@ -127,7 +127,7 @@ const LineupBridge: NextPage = () => (
           <h1>LineupBridge</h1>
           <p className="cs-lead">{LB_SUMMARY}</p>
           <p className="cs-meta">
-            Design Engineer. The only engineer, designer and product person, working with the founder.
+            Product Engineer. The only engineer, designer and product person, working with the founder.
           </p>
           <div className="cs-links">
             <External href={LB_LINKS.live}>Live app</External>
@@ -142,7 +142,7 @@ const LineupBridge: NextPage = () => (
         <div>
           <h2>Rules and journeys before screens</h2>
           <p>
-            I talked with event organizers, DJs and the founder about how bookings are agreed today. From that I
+            I talked with event organisers, DJs and the founder about how bookings are agreed today. From that I
             wrote the business rules
             and the negotiation flow (offer, counteroffer, final offer, payment, performance), then the journeys
             for booking, profile setup and sign-in, and wireframes and prototypes from those.
